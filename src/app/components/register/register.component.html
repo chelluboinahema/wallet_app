@@ -1,0 +1,53 @@
+
+<div class="container">
+    <div class="col-md-12 mt-3">
+        <div class="row">
+          <div class="container mt-3" id="banner_content">
+<h2 class="text-center">Registration</h2>
+<div class="row col-md-6 offset-4 mt-3">
+  <form [formGroup]="RegisterForm" (ngSubmit)="AddPerson()">
+    <div class="mt-2">
+      <input id="email" type="email" formControlName="Email_id" [(ngModel)]="user.Email_id"  placeholder="Email">
+      <div class="mt-1 text-danger" *ngIf="Email_id?.invalid && Email_id?.dirty">
+        Email is required and should be xxx@xx.com format.
+      </div>
+    </div>
+    <div class="mt-2">
+        <input id="text" type="text" formControlName="Name" [(ngModel)]="user.Name"  placeholder="Name">
+        <div class="mt-1 text-danger" *ngIf="Name?.invalid && Name?.dirty">
+          Name is required.
+        </div>
+      </div>
+      <div class="mt-2">
+        <input id="text" type="text" formControlName="Address" [(ngModel)]="user.Address"  placeholder="Address">
+        <div class="mt-1 text-danger" *ngIf="Address?.invalid && Address?.dirty">
+          Address is required.
+        </div>
+      </div>
+      <div class="mt-2">
+        <input id="text" type="text" formControlName="Accountno" [(ngModel)]="user.Accountno"  placeholder="Account_No">
+        <div class="mt-1 text-danger" *ngIf="Accountno?.invalid && Accountno?.dirty">
+          Account_No is required.
+        </div>
+      </div>
+      <div class="mt-2">
+        <input id="text" type="text" formControlName="Mobileno" [(ngModel)]="user.Mobileno"  placeholder="Mobile_No">
+        <div class="mt-1 text-danger" *ngIf="Mobileno?.invalid && Mobileno?.dirty">
+          Mobile_No is required and should be 10 digits.
+        </div>
+      </div>
+    <div class="mt-2">
+      <input id="pass" type="password" formControlName="Password" [(ngModel)]="user.Password"  placeholder="password">
+      <div class="mt-1 text-danger" *ngIf="Password?.invalid && Password?.dirty">
+        Password is required.
+      </div>
+    </div>
+    <div class="mt-2">
+    <button id="btnRegister" class="btn btn-secondary" (click)="RegisterUser()">Register</button>
+    </div>
+  </form>
+  </div>
+</div>
+</div>
+</div>
+</div>

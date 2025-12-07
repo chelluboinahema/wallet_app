@@ -1,0 +1,29 @@
+
+<div class="container">
+    <div class="col-md-12 mt-3">
+        <div class="row">
+          <div class="container mt-3" id="banner_content">
+<h2 class="text-center">Login</h2>
+<div class="row col-md-6 offset-4 mt-3">
+  <form [formGroup]="RegisterForm" (ngSubmit)="Login_person()">
+    <div class="mt-2">
+      <input id="email" type="email" formControlName="Email_id" [(ngModel)]="user.Email_id"  placeholder="Email">
+      <div class="mt-1 text-danger" *ngIf="Email_id?.invalid && Email_id?.dirty">
+        Email is required and should be xxx@xx.com format.
+      </div>
+    </div>
+    <div class="mt-2">
+      <input id="pass" type="password" formControlName="Password" [(ngModel)]="user.Password"  placeholder="password">
+      <div class="mt-1 text-danger" *ngIf="Password?.invalid && Password?.dirty">
+        Password is required.
+      </div>
+    </div>
+    <div class="mt-2"> 
+    <button id="btnRegister" class="btn btn-secondary"  (click)="LoginUser()">Login</button>
+    </div>
+  </form>
+  </div>
+</div>
+</div>
+</div>
+</div>
